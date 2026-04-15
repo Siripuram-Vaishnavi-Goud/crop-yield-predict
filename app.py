@@ -193,16 +193,36 @@ elif page == "dashboard":
         with c2:
             if st.button("Register", key="dash_register_btn", use_container_width=True): st.session_state.page="register"; st.rerun()
 
-elif page == "prediction":      from pages.prediction       import render; render()
-elif page == "recommendation":  from pages.recommendation   import render; render()
-elif page == "dataset_analysis":from pages.dataset_analysis import render; render()
-elif page == "weather":         from pages.weather          import render; render()
-elif page == "crop_calendar":   from pages.crop_calender    import render; render()
-elif page == "price_forecast":  from pages.price_forecast   import render; render()
-elif page == "soil_health":     from pages.soil_health      import render; render()
-elif page == "contact":         from pages.contact          import render; render()
-elif page == "login":           from pages.login            import render; render()
-elif page == "register":        from pages.register         import render; render()
+elif page == "prediction":      
+    from pages.prediction import render
+    render()
+elif page == "recommendation":  
+    from pages.recommendation import render 
+    render()
+elif page == "dataset_analysis":
+    from pages.dataset_analysis import render
+    render()
+elif page == "weather":         
+    from pages.weather import render
+    render()
+elif page == "crop_calendar":   
+    from pages.crop_calender import render
+    render()
+elif page == "price_forecast":  
+    from pages.price_forecast import render
+    render()
+elif page == "soil_health":
+    from pages.soil_health import render
+    render()
+elif page == "contact":         
+    from pages.contact import render
+    render()
+elif page == "login":           
+    from pages.login import render
+    render()
+elif page == "register":        
+    from pages.register import render
+    render()
 elif page == "admin":
     from pages.auth import is_logged_in
     if is_logged_in():
