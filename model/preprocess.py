@@ -72,7 +72,7 @@ def get_label_classes():
 preprocess.py — shared preprocessing helpers for inference
 """
 
-import pickle
+import joblib   # ✅ changed from pickle
 import os
 import numpy as np
 
@@ -81,8 +81,7 @@ MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def _load(fname):
     path = os.path.join(MODEL_DIR, fname)
-    with open(path, "rb") as f:
-        return pickle.load(f)
+    return joblib.load(path)   # ✅ changed from pickle.load
 
 
 def load_artifacts():

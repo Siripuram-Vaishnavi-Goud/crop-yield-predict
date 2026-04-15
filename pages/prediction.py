@@ -147,10 +147,19 @@ def render():
 
     try:
         from preprocess import load_artifacts, encode_input
+
+        # ✅ AUTO TRAIN IF MODEL MISSING
+        model_path = os.path.join(model_dir, "crop_model.pkl")
+        if not os.path.exists(model_path):
+            import subprocess
+            subprocess.run(["python", "train_model.py"])
+
+        # ✅ LOAD MODEL (fixed via preprocess.py using joblib)
         model, le_crop, le_season, le_state = load_artifacts()
         model_loaded = True
+
     except Exception as e:
-        st.error(f"⚠️ Model not loaded: {e}. Please run `python model/train_model.py` first.")
+        st.error(f"⚠️ Model not loaded: {e}. Please run `python train_model.py` first.")
         model_loaded = False
         return
 
@@ -186,12 +195,14 @@ def render():
             enc_crop, enc_season, enc_state = encode_input(
                 crop, season, state, le_crop, le_season, le_state
             )
+
             import pandas as pd
             features = pd.DataFrame([[
                 enc_crop, year, enc_season, enc_state,
                 area, rainfall, fertilizer, pesticide
             ]], columns=["Crop","Crop_Year","Season","State",
                          "Area","Annual_Rainfall","Fertilizer","Pesticide"])
+
             prediction = float(model.predict(features)[0])
             label, color = yield_category(prediction)
 
@@ -219,11 +230,13 @@ def render():
             st.markdown("<br/>", unsafe_allow_html=True)
             st.markdown("<div class='section-title' style='font-size:1rem;'>📋 Input Summary</div>",
                         unsafe_allow_html=True)
+
             sc1, sc2, sc3, sc4 = st.columns(4)
             sc1.metric("Crop",     crop)
             sc2.metric("Season",   season)
             sc3.metric("State",    state)
             sc4.metric("Year",     str(year))
+
             sc5, sc6, sc7, sc8 = st.columns(4)
             sc5.metric("Area",      f"{area:,.0f} ha")
             sc6.metric("Rainfall",  f"{rainfall:.0f} mm")
