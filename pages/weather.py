@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/weather.py — Weather Integration (Open-Meteo free API, no key needed)"""
 
 import streamlit as st

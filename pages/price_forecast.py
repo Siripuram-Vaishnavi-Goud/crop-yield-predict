@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/price_forecast.py — Crop Price Trends & Forecast (MSP-based + trend simulation)"""
 
 import streamlit as st

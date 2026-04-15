@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/admin.py — Admin Panel (login required)"""
 
 import streamlit as st

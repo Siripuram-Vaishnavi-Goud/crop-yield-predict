@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/soil_health.py — Soil Health Advisor"""
 import numpy as np
 import streamlit as st

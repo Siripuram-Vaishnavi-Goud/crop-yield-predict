@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/login.py"""
 import streamlit as st
 from pages.auth import login_user

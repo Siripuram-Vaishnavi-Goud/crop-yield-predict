@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 preprocess.py — shared preprocessing helpers for inference
 """

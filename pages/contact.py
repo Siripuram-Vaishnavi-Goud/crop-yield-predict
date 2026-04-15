@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/contact.py — Contact page"""
 
 import streamlit as st

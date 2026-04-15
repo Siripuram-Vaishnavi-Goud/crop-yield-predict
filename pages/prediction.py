@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/prediction.py — Crop Yield Prediction"""
 
 import streamlit as st

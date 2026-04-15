@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/register.py"""
 import streamlit as st
 from pages.auth import register_user

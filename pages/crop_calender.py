@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/crop_calendar.py — Crop Calendar: when to sow, grow & harvest"""
 
 import streamlit as st

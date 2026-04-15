@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/recommendation.py — Crop Recommendation Engine"""
 
 import streamlit as st

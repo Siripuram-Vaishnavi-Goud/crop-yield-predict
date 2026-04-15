@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """pages/dashboard.py — Analytics Dashboard (login required)"""
 
 import streamlit as st
