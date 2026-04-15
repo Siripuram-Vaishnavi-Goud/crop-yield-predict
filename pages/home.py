@@ -138,4 +138,8 @@ def render():
     with c2:
         if st.button("🌱  Try Prediction", use_container_width=True):
             st.session_state.page = "prediction"
+<<<<<<< HEAD
             st.rerun()
+=======
+            st.rerun()
+>>>>>>> d0e113e (Added project with model files)
