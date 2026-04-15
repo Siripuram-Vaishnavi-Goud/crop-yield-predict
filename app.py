@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import streamlit as st
 import os, sys
 
@@ -198,7 +197,7 @@ elif page == "prediction":      from pages.prediction       import render; rende
 elif page == "recommendation":  from pages.recommendation   import render; render()
 elif page == "dataset_analysis":from pages.dataset_analysis import render; render()
 elif page == "weather":         from pages.weather          import render; render()
-elif page == "crop_calendar":   from pages.crop_calendar    import render; render()
+elif page == "crop_calendar":   from pages.crop_calender    import render; render()
 elif page == "price_forecast":  from pages.price_forecast   import render; render()
 elif page == "soil_health":     from pages.soil_health      import render; render()
 elif page == "contact":         from pages.contact          import render; render()
@@ -210,7 +209,6 @@ elif page == "admin":
         from pages.admin import render; render()
     else:
         st.warning("Admin panel requires login.")
-=======
 import streamlit as st
 import os, sys
 
@@ -410,7 +408,7 @@ elif page == "prediction":      from pages.prediction       import render; rende
 elif page == "recommendation":  from pages.recommendation   import render; render()
 elif page == "dataset_analysis":from pages.dataset_analysis import render; render()
 elif page == "weather":         from pages.weather          import render; render()
-elif page == "crop_calendar":   from pages.crop_calendar    import render; render()
+elif page == "crop_calender":   from pages.crop_calender    import render; render()
 elif page == "price_forecast":  from pages.price_forecast   import render; render()
 elif page == "soil_health":     from pages.soil_health      import render; render()
 elif page == "contact":         from pages.contact          import render; render()
@@ -422,5 +420,4 @@ elif page == "admin":
         from pages.admin import render; render()
     else:
         st.warning("Admin panel requires login.")
->>>>>>> d0e113e (Added project with model files)
         if st.button("Login", key="admin_login_btn"): st.session_state.page="login"; st.rerun()
