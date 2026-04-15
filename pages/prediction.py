@@ -1,5 +1,4 @@
-"""pages/prediction.py — Crop Yield Prediction"""
-
+"""pages/prediction.py - Crop Yield Prediction"""
 import streamlit as st
 import sys, os
 import numpy as np
