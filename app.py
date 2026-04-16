@@ -178,12 +178,12 @@ with st.sidebar:
 page = st.session_state.page
 
 if page == "home":
-    from pages.home import render; render()
+    from pages_backup.home import render; render()
 
 elif page == "dashboard":
-    from pages.auth import is_logged_in
+    from pages_backup.auth import is_logged_in
     if is_logged_in():
-        from pages.dashboard import render; render()
+        from pages_backup.dashboard import render; render()
     else:
         st.markdown('<div class="page-hero"><h1>Dashboard</h1><p>Login required to view analytics</p></div>', unsafe_allow_html=True)
         st.warning("Please log in to access the Dashboard.")
@@ -194,38 +194,38 @@ elif page == "dashboard":
             if st.button("Register", key="dash_register_btn", use_container_width=True): st.session_state.page="register"; st.rerun()
 
 elif page == "prediction":      
-    from pages.prediction import render
+    from pages_backup.prediction import render
     render()
 elif page == "recommendation":  
-    from pages.recommendation import render 
+    from pages_backup.recommendation import render 
     render()
 elif page == "dataset_analysis":
-    from pages.dataset_analysis import render
+    from pages_backup.dataset_analysis import render
     render()
 elif page == "weather":         
-    from pages.weather import render
+    from pages_backup.weather import render
     render()
 elif page == "crop_calendar":   
-    from pages.crop_calender import render
+    from pages_backup.crop_calender import render
     render()
 elif page == "price_forecast":  
-    from pages.price_forecast import render
+    from pages_backup.price_forecast import render
     render()
 elif page == "soil_health":
-    from pages.soil_health import render
+    from pages_backup.soil_health import render
     render()
 elif page == "contact":         
-    from pages.contact import render
+    from pages_backup.contact import render
     render()
 elif page == "login":           
-    from pages.login import render
+    from pages_backup.login import render
     render()
 elif page == "register":        
-    from pages.register import render
+    from pages_backup.register import render
     render()
 elif page == "admin":
-    from pages.auth import is_logged_in
+    from pages_backup.auth import is_logged_in
     if is_logged_in():
-        from pages.admin import render; render()
+        from pages_backup.admin import render; render()
     else:
         st.warning("Admin panel requires login.")
